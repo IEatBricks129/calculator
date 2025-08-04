@@ -1,13 +1,15 @@
 import os
 import tkinter as tk
 from tkinter import messagebox
-from ctypes import windll
-from ctypes import c_int
-from ctypes import c_uint
-from ctypes import c_ulong
-from ctypes import POINTER
-from ctypes import byref
-
+try:
+    from ctypes import windll
+    from ctypes import c_int
+    from ctypes import c_uint
+    from ctypes import c_ulong
+    from ctypes import POINTER
+    from ctypes import byref
+except ImportError:
+    print("gay non windows user")
 
 def create_calculator_gui():
     root = tk.Tk()
